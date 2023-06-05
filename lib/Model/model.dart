@@ -1,10 +1,10 @@
 class UserModel {
   String? username;
-  String? id;
+  int? id;
   UserModel({this.id, this.username});
   factory UserModel.fromjson(Map<String, dynamic> map) {
     return UserModel(
-      id: map["id"],
+      id: map["userId"],
       username: map["username"],
     );
   }

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter_tts/flutter_tts.dart';
 
 import 'package:avatar_glow/avatar_glow.dart';
@@ -11,13 +13,13 @@ import 'package:todo_api/view/single_chat_screen.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
-  String ids = '';
+  int? ids;
   @override
   Widget build(BuildContext context) {
-    final adminChatProvider =
-        Provider.of<AdminChatController>(context, listen: false);
+    final adminChatProvider = Provider.of<AdminChatController>(context);
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       adminChatProvider.getMessage(ids);
+
       //  totalMessage = adminChatProvider.getResultMessage.length;
       //  print(totalMessage);
     });
@@ -43,7 +45,10 @@ class HomeScreen extends StatelessWidget {
                       itemCount: snapshot.data!.length,
                       itemBuilder: (context, index) {
                         final data = snapshot.data![index];
-                        ids = data.id ?? '';
+                        log(data.id.toString());
+                        ids = data.id;
+                        log(data.username.toString());
+
                         return Card(
                           color: Colors.transparent,
                           shape: RoundedRectangleBorder(
@@ -51,12 +56,13 @@ class HomeScreen extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10)),
                           child: ListTile(
                             onTap: () {
-                              adminChatProvider.getMessage(data.id);
+                              log(data.id.toString());
+                              // adminChatProvider.getMessage(data.id);
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => SingleChatScreen(
-                                        id: data.id ?? '',
+                                        id: data.id!,
                                         userName: data.username ?? ''),
                                   ));
                             },

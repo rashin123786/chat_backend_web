@@ -5,17 +5,17 @@ import 'package:flutter/material.dart';
 import '../../Model/model.dart';
 
 const background = Color.fromARGB(255, 12, 22, 54);
-SizedBox sizedBox30 = SizedBox(
+const sizedBox30 = SizedBox(
   height: 30,
 );
-SizedBox sizedBox20 = SizedBox(
+const sizedBox20 = SizedBox(
   height: 20,
 );
-SizedBox sizedBox10 = SizedBox(
+const sizedBox10 = SizedBox(
   height: 10,
 );
 
-final userCollection = FirebaseFirestore.instance.collection("user");
+final userCollection = FirebaseFirestore.instance.collection("newuser");
 Stream<List<UserModel>> getAlluser() {
   return userCollection.snapshots().map((event) {
     return event.docs.map((e) {
@@ -27,14 +27,14 @@ Stream<List<UserModel>> getAlluser() {
 final messagecollection = FirebaseFirestore.instance.collection("messages");
 String? docId;
 void addChat({
-  String? id,
+  int? id,
   String? name,
   String? messages,
   String? dateTime,
   Timestamp? timestamp,
 }) async {
   print(id);
-  await messagecollection.doc(id).collection("chats").add({
+  await messagecollection.doc(id.toString()).collection("chats").add({
     "id": messagecollection.id,
     "messages": messages,
     "datetime": dateTime,
@@ -42,7 +42,7 @@ void addChat({
     "isadmin": true,
   }).then((value) {
     docId = value.id;
-    messagecollection.doc(id).collection("chats").doc(docId).update({
+    messagecollection.doc(id.toString()).collection("chats").doc(docId).update({
       "id": id,
     });
   });

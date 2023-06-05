@@ -9,7 +9,7 @@ import 'package:todo_api/Controller/constants/constants.dart';
 import '../Controller/provider/chat_controller.dart';
 
 class SingleChatScreen extends StatelessWidget {
-  final String id;
+  final int id;
   final String userName;
   SingleChatScreen({super.key, required this.id, required this.userName});
   final _message = TextEditingController();
