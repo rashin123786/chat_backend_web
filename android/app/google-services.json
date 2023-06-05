@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "485263749111",
+    "project_id": "nexyprism",
+    "storage_bucket": "nexyprism.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485263749111:android:b4d0af4b1d59d18c7988f2",
+        "android_client_info": {
+          "package_name": "com.example.nexprism"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "485263749111-0j1bu7unura359sbvb9563njk36v365c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMK_wjiu_9E4G18b2b5XY0Rqf2zYt6yIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "485263749111-0j1bu7unura359sbvb9563njk36v365c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485263749111:android:e2b99a73c3f9c8ab7988f2",
+        "android_client_info": {
+          "package_name": "com.example.todo_api"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "485263749111-0j1bu7unura359sbvb9563njk36v365c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMK_wjiu_9E4G18b2b5XY0Rqf2zYt6yIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "485263749111-0j1bu7unura359sbvb9563njk36v365c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
