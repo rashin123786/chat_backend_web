@@ -13,7 +13,7 @@ import 'package:todo_api/view/single_chat_screen.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
-  int? ids;
+  String? ids;
   @override
   Widget build(BuildContext context) {
     final adminChatProvider = Provider.of<AdminChatController>(context);
@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
       adminChatProvider.getMessage(ids);
 
       //  totalMessage = adminChatProvider.getResultMessage.length;
-      //  print(totalMessage);
+      //  print(totalMessage)
     });
     return Scaffold(
       appBar: AppBar(

@@ -27,7 +27,7 @@ Stream<List<UserModel>> getAlluser() {
 final messagecollection = FirebaseFirestore.instance.collection("messages");
 String? docId;
 void addChat({
-  int? id,
+  String? id,
   String? name,
   String? messages,
   String? dateTime,

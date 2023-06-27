@@ -9,7 +9,7 @@ import 'package:todo_api/Controller/constants/constants.dart';
 import '../Controller/provider/chat_controller.dart';
 
 class SingleChatScreen extends StatelessWidget {
-  final int id;
+  final String id;
   final String userName;
   SingleChatScreen({super.key, required this.id, required this.userName});
   final _message = TextEditingController();
@@ -32,7 +32,7 @@ class SingleChatScreen extends StatelessWidget {
         child: Column(
           children: [
             ListView.separated(
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               reverse: true,
               controller: scrollController,
